@@ -9,6 +9,7 @@
 | Tópico      | Tipo |
 | ----------- | ----------- |
 | 👩🏾‍🏫 [Protocolo HTTP](01.%20Protocolo%20HTTP/README.md) | Lição |
-| 👩🏾‍🏫 [JSON]() | Lição; Exercício |
+| 👩🏾‍🏫 [API](02.%20API/README.md) | Lição |
+| 👩🏾‍🏫 [JSON](03.%20JSON/README.md) | Lição; Exercício |
 | 👩🏾‍🏫 [XMLHttpRequest]() | Lição; Exercício; Entregável |
 | 👩🏾‍🏫 [fetch]() | Lição; Exercício; Entregável |
