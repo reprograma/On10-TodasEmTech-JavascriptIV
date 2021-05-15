@@ -13,3 +13,10 @@
 | 👩🏾‍🏫 [JSON](03.%20JSON/README.md) | Lição; Exercício |
 | 👩🏾‍🏫 [fetch](04.%20Fetch/README.md) | Lição; Exercício; Entregável |
 | 👩🏾‍🏫 [XMLHttpRequest](05.%20XMLHttpRequest/README.md) | Lição; Exercício; Entregável |
+
+
+## Exercício
+
+### JSON
+
+Copiar JSON de "https://borgesdn.github.io/pokedex-source/pokedex.json" e implementar os métodos em branco.
