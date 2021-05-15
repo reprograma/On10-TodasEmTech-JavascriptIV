@@ -12,6 +12,8 @@ Trata-se de uma arquitetura em que uma API é construída, seguindo determinadas
 
 ## CORS
 
+Acrônimo para _Cross-Origin Resourse Sharing_
+
 Quando se faz uma requisição para um recurso externo, por padrão, o cliente (navegador) bloqueia se as origens são diferentes. O servidor deve, então, permitir o acesso de origens distintas. O CORS, ou Compartilhamento de Recursos de Origem Diferente, vem como mecanismo para permitir o acesso desses recursos.
 
 Não são todos os recursos que necessitam de CORS. É importante notar que é um problema que deve ser resolvido no lado do servidor.
