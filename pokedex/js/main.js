@@ -98,7 +98,7 @@ function filter() {
 async function viewPokemon(e) {
   e.preventDefault();
 
-  const pokemon = await getPokemon($(this).data("id"))
+  const pokemon = await getPokemonAsync($(this).data("id"))
 
   $("#id").val(pokemon.id)
   $("#name").val(pokemon.name)

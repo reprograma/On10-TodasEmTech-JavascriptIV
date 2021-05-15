@@ -50,7 +50,7 @@ async function fetchPokemonsAsync() {
     // https://borgesdn.github.io/pokedex-source/pokedex.json
 }
 
-async function getPokemon(id) {
+async function getPokemonAsync(id) {
     // Obter pokemon pelo id
     // Tome como exemplo a função fetchTypesAsync() na linha 5
     // Consumir da pokeapi, utilizem o arquivo json que eu montei
