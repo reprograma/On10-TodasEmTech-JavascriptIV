@@ -8,11 +8,17 @@ O pedido que um cliente realiza a nosso servidor. Esse pedido contém uma série
 
 1. _Start Line_
     1. Verbo e Substantivos
+    
         GET - Essa é a requisição mais comum de todas. Através dessa requisição nós pedimos a representação de um recurso: que pode ser um arquivo html, xml, json, etc.
+        
         POST - O método POST é utilizado quando queremos criar um recurso. Quando usamos POST, os dados vão no corpo da requisição e não na URI.
+        
         PUT - Requisita que um recurso seja "guardado" na URI fornecida. Se o recurso já existir, ele deve ser atualizado. Se não existir, pode ser criado.
+        
         PATCH - Serve para atualizar partes de um recurso, e não o recurso todo.
+        
         DELETE - Exclui o recurso especificado.
+        
         Idempotência
     1. URL
     1. Versão HTTP
