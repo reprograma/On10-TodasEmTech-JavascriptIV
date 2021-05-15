@@ -24,17 +24,6 @@
           <option value="">Todos os tipos</option>
         </select>
       </div>
-      <div class="form-group mx-sm-3">
-        <select id="sort-type" class="form-control">
-          <option value="">Ordenar</option>
-          <option>ID (asc)</option>
-          <option>ID (desc)</option>
-          <option>A-Z</option>
-          <option>Z-A</option>
-        </select>
-      </div>
-      <button class="btn btn-outline-success my-2 my-sm-0 btn-new" type="submit">Novo</button>
-    </form>
   </nav>
   <div class="container">
     <section class="pokedex"></section>
@@ -54,44 +43,43 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" readonly>
             <input type="hidden" class="form-control" id="id">
           </div>
-          <div class="ckb-types">
+          <div class="types">
           </div>
           <hr />
           <div class="form-row">
             <div class="col">
               <label for="hp">HP</label>
-              <input type="number" class="form-control" id="hp">
+              <input type="number" class="form-control" id="hp" readonly>
             </div>
             <div class="col">
               <label for="atk">Ataque</label>
-              <input type="number" class="form-control" id="atk">
+              <input type="number" class="form-control" id="atk" readonly>
             </div>
             <div class="col">
               <label for="def">Defesa</label>
-              <input type="number" class="form-control" id="def">
+              <input type="number" class="form-control" id="def" readonly>
             </div>
           </div>
           <div class="form-row">
             <div class="col">
               <label for="speed">Velocidade</label>
-              <input type="number" class="form-control" id="speed">
+              <input type="number" class="form-control" id="speed" readonly>
             </div>
             <div class="col">
               <label for="satk">Ataque Especial</label>
-              <input type="number" class="form-control" id="satk">
+              <input type="number" class="form-control" id="satk" readonly>
             </div>
             <div class="col">
               <label for="sdef">Defesa Especial</label>
-              <input type="number" class="form-control" id="sdef">
+              <input type="number" class="form-control" id="sdef" readonly>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary btn-save">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
