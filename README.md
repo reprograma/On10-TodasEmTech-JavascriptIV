@@ -11,5 +11,5 @@
 | 👩🏾‍🏫 [Protocolo HTTP](01.%20Protocolo%20HTTP/README.md) | Lição |
 | 👩🏾‍🏫 [API](02.%20API/README.md) | Lição |
 | 👩🏾‍🏫 [JSON](03.%20JSON/README.md) | Lição; Exercício |
-| 👩🏾‍🏫 [fetch]() | Lição; Exercício; Entregável |
-| 👩🏾‍🏫 [XMLHttpRequest]() | Lição; Exercício; Entregável |
+| 👩🏾‍🏫 [fetch](04.%20Fetch/README.md) | Lição; Exercício; Entregável |
+| 👩🏾‍🏫 [XMLHttpRequest](05.%20XMLHttpRequest/README.md) | Lição; Exercício; Entregável |
