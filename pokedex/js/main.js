@@ -1,5 +1,16 @@
 $(document).ready(function () {
-  let pokemonTypes = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
+
+  fetch("https://pokeapi.co/api/v2/type/")
+  .then(response => response.json()) //Essa linha espera a API retornar informações sobre a requisição
+  .then(json => { //Essa linha espera o resultado completo
+    console.log(json)    
+    const pokemonTypes = json.results.map(function (type){
+      return type.name
+    })
+    loadTypes(pokemonTypes)
+  })
+  .catch(erro => console.log(erro));
+
 
   const request = new XMLHttpRequest();
   const metodo = "GET";
@@ -14,7 +25,18 @@ $(document).ready(function () {
     }
   })
   request.send();
-  
+
+  //  fetch("https://pokeapi.co/api/v2/pokemon/?limit=150")
+  //  .then(response => response.json())
+  //  .then(json => {
+  //    console.log(json)
+  //    const pokemonTypes = json.results.map(function (type){
+  //     return type.name
+  //   })
+  //   loadTypes(pokemonTypes)
+  // })
+  // .catch(erro => console.log(erro));
+  //  })
 
 
   $('#filter-name').on('keyup', e => {
