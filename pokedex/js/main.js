@@ -1,5 +1,12 @@
 $(document).ready(function () {
-  let pokemonTypes = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
+  
+  let pokemonTypes = [] //"bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
+
+ fetch("http://pokeapi.co/api/v2/type")
+  .then(response => response.json()) // Essa linha espera a API retornar informações: ok, 200 significa que deu certo
+  .then(json => console.log => {
+    const pokemonTypes = // Essa linha espera o resultado completo
+  .catch(erro =>console.log(erro));
 
   const request = new XMLHttpRequest();
   const metodo = "GET";
