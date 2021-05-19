@@ -1,4 +1,13 @@
-let pokemonList = [];
+let pokemonList = listarPokemons()
+
+
+    function listarPokemons () {
+    let resultado = fetch("https://pokeapi.co/api/v2/pokemon/") 
+    resultado.then(pokemon => pokemon.json()).then(console.log)        
+   
+}
+
+
 
 function filterPokemon(name, type) {
     const listafiltrada = pokemonList.filter(pokemon => {
