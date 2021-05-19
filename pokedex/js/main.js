@@ -1,8 +1,38 @@
 $(document).ready(function () {
-  let pokemonTypes = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
+  let pokemonTypes = [] //"bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
 
+  fetch("https://pokeapi.co/api/v2/type")
+    .then(response => response.json())
+    .then(json => json.results.map((item) =>{
+      console.log(item.name)
+    }))
+    .catch(erro => console.log(erro));
+  //map rastreia um item dentro de um array já criado. 
 
-  load(pokemonList)
+/*OUTRA FORMA DE FAZER
+  fetch("https://pokeapi.co/api/v2/type")
+      .then(response => response.json())
+      .then(json => {
+        pokemonTypes =json.results.map(function (type) {
+          return type.name
+        })
+        console.log(types)
+      .catch(erro => console.log(erro));*/
+
+  const request = new XMLHttpRequest();
+  const metodo = "GET";
+  const url = "https://borgesdn.github.io/pokedex-source/pokedex.json";
+
+  request.open(metodo, url);
+  request.addEventListener("readystatechange", function () {    
+    if (request.readyState == 4 && request.status == 200) {
+      // JSON.parse para transformar o texto obtido em objeto
+      pokemonList = JSON.parse(request.response)
+      load(pokemonList)
+    }
+  })
+  request.send();
+  
 
 
   $('#filter-name').on('keyup', e => {
