@@ -1,5 +1,28 @@
 $(document).ready(function () {
-  let pokemonTypes = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
+  let pokemonTypes = [] //"bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
+
+
+  //map rastreia um item dentro de um array já criado. 
+
+
+fetch("https://pokeapi.co/api/v2/type")
+    .then(response => response.json()) /// 1 essa linha espera a API retornarcom Json
+    .then(json => {                    // 2 then aguarda o resultado completo
+     const pokemonTypes =json.results.map((type) => {
+     return type.name
+    })
+      loadTypes(pokemonTypes)
+    })
+    .catch(erro => console.log(erro));
+
+//o fetch vem em duas partes
+
+  //////exercicio////
+
+  /* carregar primeiros 150 pokemons
+  o metodo load abaixo recebe um array de pokemons  e ja carrega os itens na tela
+  */
+ 
 
   const request = new XMLHttpRequest();
   const metodo = "GET";
@@ -74,6 +97,8 @@ $(document).ready(function () {
     }
     load(pokemonList)
   })
+
+
 
   function filter() {
     const name = $('#filter-name').val()
@@ -192,5 +217,4 @@ $(document).ready(function () {
       .join('')
   }
 
-  loadTypes(pokemonTypes)
 });
