@@ -20,3 +20,5 @@
 ### JSON
 
 Copiar JSON de "https://borgesdn.github.io/pokedex-source/pokedex.json" e implementar os métodos em branco.
+
+# Trabalho de JavaScript semana IV
