@@ -29,16 +29,16 @@ async function fetchTypesAsync() {
         Linha 39: Mostra algum erro
     */
 
-    // pokemonTypes = await fetch("https://pokeapi.co/api/v2/type")
-    //     .then((response) => response.json())
-    //     .then(data => {
-    //         return data.results.map(function (type) {
-    //             return type.name
-    //         });
-    //     })
-    //     .catch(error => {
-    //         console.error(error);
-    //     });
+    pokemonTypes = await fetch("https://pokeapi.co/api/v2/type")
+        .then((response) => response.json())
+        .then(data => {
+            return data.results.map(function (type) {
+                return type.name
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
 
     // #endregion
 }
@@ -53,7 +53,6 @@ async function fetchPokemonsAsync() {
 async function getPokemonAsync(id) {
     // Obter pokemon pelo id
     // Tome como exemplo a função fetchTypesAsync() na linha 5
-    // Consumir da pokeapi, utilizem o arquivo json que eu montei
     // https://pokeapi.co/api/v2/pokemon/(id recebido no parametro)
 }
 
