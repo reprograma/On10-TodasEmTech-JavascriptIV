@@ -1,4 +1,15 @@
-let pokemonList = [];
+let pokemonTypes = []
+
+fetch("https://pokeapi.co/api/v2/type")
+    .then(response => response.json())
+    .then(json => json.results.map((item) => {
+      return pokemonTypes.push(item.name)
+    })
+      , console.log(pokemonTypes)
+    )
+    .catch(erro => console.log(erro));
+
+
 
 function filterPokemon(name, type) {
     const listafiltrada = pokemonList.filter(pokemon => {
