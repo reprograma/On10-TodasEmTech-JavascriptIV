@@ -102,11 +102,6 @@ async function viewPokemon(e) {
 
   $("#id").val(pokemon.id)
   $("#hp").val(pokemon.stats.hp)
-  // $("#atk").val(pokemon.stats.attack)
-  // $("#def").val(pokemon.stats.defense)
-  // $("#speed").val(pokemon.stats.speed)
-  // $("#satk").val(pokemon.stats['special-attack'])
-  // $("#sdef").val(pokemon.stats['special-defense'])
 
 
   for (const type of pokemon.types) {
