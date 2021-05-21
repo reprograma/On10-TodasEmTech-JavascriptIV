@@ -24,17 +24,6 @@
           <option value="">Todos os tipos</option>
         </select>
       </div>
-      <div class="form-group mx-sm-3">
-        <select id="sort-type" class="form-control">
-          <option value="">Ordenar</option>
-          <option>ID (asc)</option>
-          <option>ID (desc)</option>
-          <option>A-Z</option>
-          <option>Z-A</option>
-        </select>
-      </div>
-      <button class="btn btn-outline-success my-2 my-sm-0 btn-new" type="submit">Novo</button>
-    </form>
   </nav>
   <div class="container">
     <section class="pokedex"></section>
@@ -43,55 +32,35 @@
   <!-- Modal -->
   <div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="max-width: 600px;">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name">
-            <input type="hidden" class="form-control" id="id">
-          </div>
-          <div class="ckb-types">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img class="pokemon-sprite-m" style="max-width: 200px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title pokemon-name-m"></h5>
+                  <div class="pokemon-types-m"></div>
+                  <hr />
+                  <b>Habilidades</b>
+                  <div class="card-text pokemon-abilities-m"></div>
+                  <b>Habilidades Ocultas</b>
+                  <div class="card-text pokemon-hidden-abilities-m"></div>
+                </div>
+              </div>
+            </div>
           </div>
           <hr />
-          <div class="form-row">
-            <div class="col">
-              <label for="hp">HP</label>
-              <input type="number" class="form-control" id="hp">
-            </div>
-            <div class="col">
-              <label for="atk">Ataque</label>
-              <input type="number" class="form-control" id="atk">
-            </div>
-            <div class="col">
-              <label for="def">Defesa</label>
-              <input type="number" class="form-control" id="def">
-            </div>
+          <div class="pokemon-stats-m">
           </div>
-          <div class="form-row">
-            <div class="col">
-              <label for="speed">Velocidade</label>
-              <input type="number" class="form-control" id="speed">
-            </div>
-            <div class="col">
-              <label for="satk">Ataque Especial</label>
-              <input type="number" class="form-control" id="satk">
-            </div>
-            <div class="col">
-              <label for="sdef">Defesa Especial</label>
-              <input type="number" class="form-control" id="sdef">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary btn-save">Salvar</button>
         </div>
       </div>
     </div>
