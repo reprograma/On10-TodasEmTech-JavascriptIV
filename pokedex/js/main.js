@@ -97,17 +97,3 @@ function filter() {
 
 async function viewPokemon(e) {
   e.preventDefault();
-
-  const pokemon = await getPokemon($(this).data("id"))
-
-  $("#id").val(pokemon.id)
-  $("#hp").val(pokemon.stats.hp)
-
-
-  for (const type of pokemon.types) {
-    $(`.type[value=${type.type.name}`).prop('checked', true)
-  }
-
-  $(".modal-title").html(`Editar ${pokemon.name}`)
-  $(".modal").modal('show')
-}
