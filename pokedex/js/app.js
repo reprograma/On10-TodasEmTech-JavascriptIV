@@ -63,7 +63,8 @@ async function fetchPokemonsAsync() {
         });*/
 
 
-    
+    const resposta = await fetch("https://borgesdn.github.io/pokedex-source/pokedex.json")
+    pokemonList = await resposta.json()
 
         
 }
