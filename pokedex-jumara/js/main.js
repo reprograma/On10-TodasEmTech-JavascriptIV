@@ -101,13 +101,8 @@ async function viewPokemon(e) {
   const pokemon = await getPokemon($(this).data("id"))
 
   $("#id").val(pokemon.id)
-  $("#hp").val(pokemon.stats.hp)
-  // $("#atk").val(pokemon.stats.attack)
-  // $("#def").val(pokemon.stats.defense)
-  // $("#speed").val(pokemon.stats.speed)
-  // $("#satk").val(pokemon.stats['special-attack'])
-  // $("#sdef").val(pokemon.stats['special-defense'])
-
+  $("#name").val(pokemon.name)
+  // Débora, ajeite isso aqui
 
   for (const type of pokemon.types) {
     $(`.type[value=${type.type.name}`).prop('checked', true)
