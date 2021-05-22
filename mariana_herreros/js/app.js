@@ -48,28 +48,6 @@ async function fetchPokemonsAsync() {
     // Tome como exemplo a função fetchTypesAsync() na linha 5
     // Dessa vez não vamos consumir da pokeapi, utilizem o arquivo json que eu montei
     // https://borgesdn.github.io/pokedex-source/pokedex.json
-    //Primeira opção de resolução:
-    pokemonList = await fetch("https://borgesdn.github.io/pokedex-source/pokedex.json")
-        .then((resposta) => resposta.json())
-        .catch(error => {
-            console.error(error);
-        });
-    return pokemonList
-
-    /* Segunda opção de resolução:
-        await fetch("https://borgesdn.github.io/pokedex-source/pokedex.json")
-            .then((resposta) => resposta.json())
-            .then((resposta) => pokemonList = resposta)
-            .catch(error => { 
-                console.error(error);
-            });
-        */
-
-    /* Terceira opção de resolução:
-    let resposta = await fetch("https://borgesdn.github.io/pokedex-source/pokedex.json")
-    pokemonList = await resposta.json()
-    */
-
 }
 
 async function getPokemon(id) {
@@ -77,19 +55,7 @@ async function getPokemon(id) {
     // Tome como exemplo a função fetchTypesAsync() na linha 5
     // Consumir da pokeapi, utilizem o arquivo json que eu montei
     // https://pokeapi.co/api/v2/pokemon/(id recebido no parametro)
-
-    let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        .then((resposta) => resposta.json())
-        .catch((error) => {
-            console.log(error);
-            alert("Erro ao buscar pokemon")
-        })
-    return pokemon
-
-
 }
-
-
 
 function filterPokemon(name, type) {
     const filteredList = pokemonList.filter(pokemon => {
