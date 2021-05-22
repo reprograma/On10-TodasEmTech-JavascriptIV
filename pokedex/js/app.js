@@ -42,20 +42,26 @@ async function fetchTypesAsync() {
 
     // #endregion
 }
-
+// **Fazer then e await das duas funções**
 async function fetchPokemonsAsync() {
     // Obter pokemons e inserir o resultado na variavel pokemonList
     // Tome como exemplo a função fetchTypesAsync() na linha 5
     // Dessa vez não vamos consumir da pokeapi, utilizem o arquivo json que eu montei
     // https://borgesdn.github.io/pokedex-source/pokedex.json
+    const fetchPokemon = await fetch("https://borgesdn.github.io/pokedex-source/pokedex.json");
+    pokemonList = await fetchPokemon.json();
 }
 
 async function getPokemon(id) {
     // Obter pokemon pelo id
     // Tome como exemplo a função fetchTypesAsync() na linha 5
-    // Consumir da pokeapi, utilizem o arquivo json que eu montei
     // https://pokeapi.co/api/v2/pokemon/(id recebido no parametro)
+    const pokemon = await fetch (`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const result = await pokemon.json();
+    console.log(result);
+    return result;
 }
+// ** fim do exercício**
 
 function filterPokemon(name, type) {
     const filteredList = pokemonList.filter(pokemon => {
