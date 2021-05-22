@@ -12,7 +12,6 @@
 | 👩🏾‍🏫 [API](02.%20API/README.md) | Lição |
 | 👩🏾‍🏫 [JSON](03.%20JSON/README.md) | Lição; Exercício |
 | 👩🏾‍🏫 [fetch](04.%20Fetch/README.md) | Lição; Exercício; Entregável |
-| 👩🏾‍🏫 [XMLHttpRequest](05.%20XMLHttpRequest/README.md) | Lição; Exercício; Entregável |
 
 
 ## Entregável
