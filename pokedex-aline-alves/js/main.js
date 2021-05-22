@@ -97,7 +97,7 @@ $(document).ready(function () {
     e.preventDefault();
 
     const pokemon = getPokemon($(this).data("id"))
-
+console.log(pokemon);
     $("#id").val(pokemon.id)
     $("#name").val(pokemon.name)
     $("#hp").val(pokemon.stats.hp)
