@@ -97,3 +97,22 @@ function filter() {
 
 async function viewPokemon(e) {
   e.preventDefault();
+
+  const pokemon = await getPokemon($(this).data("id"))
+
+  $("#id").val(pokemon.id)
+  $("#name").val(pokemon.name)
+  // $("#atk").val(pokemon.stats.attack)
+  // $("#def").val(pokemon.stats.defense)
+  // $("#speed").val(pokemon.stats.speed)
+  // $("#satk").val(pokemon.stats['special-attack'])
+  // $("#sdef").val(pokemon.stats['special-defense'])
+
+
+  for (const type of pokemon.types) {
+    $(`.type[value=${type.type.name}`).prop('checked', true)
+  }
+
+  $(".modal-title").html(`Editar ${pokemon.name}`)
+  $(".modal").modal('show')
+}
