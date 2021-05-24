@@ -50,6 +50,7 @@ async function fetchPokemonsAsync() {
   // https://borgesdn.github.io/pokedex-source/pokedex.json
 
   //Primeira opção de resolução:
+
   pokemonList = await fetch(
     "https://borgesdn.github.io/pokedex-source/pokedex.json"
   )
