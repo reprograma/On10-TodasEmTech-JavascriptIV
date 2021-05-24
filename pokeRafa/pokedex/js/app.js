@@ -75,6 +75,26 @@ async function getPokemon(id) {
     // Consumir da pokeapi, utilizem o arquivo json que eu montei
     // https://pokeapi.co/api/v2/pokemon/(id recebido no parametro)
 
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).catch(error => {console.error(error);});
+    if (response && response.ok){
+        const data = await response.json()
+        return data
+    } else {
+        alert("Erro ao buscar pokemon")
+    }
+    
+    /*let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then((resposta) => {
+            resposta.json()
+        })
+        .then((resposta) => {
+            pokemon = resposta
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+        return pokemon*/
 
 
 }
