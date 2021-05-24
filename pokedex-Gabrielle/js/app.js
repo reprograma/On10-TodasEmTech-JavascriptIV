@@ -79,7 +79,7 @@ async function getPokemon(id) {
   // Tome como exemplo a função fetchTypesAsync() na linha 5
   // Consumir da pokeapi, utilizem o arquivo json que eu montei
   // https://pokeapi.co/api/v2/pokemon/(id recebido no parametro)
-
+  0;
   let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then((resposta) => resposta.json())
     .catch((error) => {
