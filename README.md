@@ -1,4 +1,4 @@
-# Javascript IV!
+# Javascript IV
 
 **Objetivo geral:** Conseguir realizar requisições em API 
 
