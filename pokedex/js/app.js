@@ -1,61 +1,49 @@
+
 let pokemonList = [];
-let pokemonTypes = []
+let pokemonTypes = [];
 
-// Método assíncrono para obter tipos via api. Utilize o sufixo Async no fim do nome do método é um bom padrão
-async function fetchTypesAsync() {
-    // #region Utilizando await
+function fetchTypes() {
+    const request = new XMLHttpRequest()
+    request.open("GET", "https://pokeapi.co/api/v2/type", false)
 
-    /* 
-        Cada linha é aguarda pela resposta da requisição que é feita nela. Menos código, mais legível.
-        Linha 14: Aguarda resposta do servidor
-        Linha 15: Aguarda conversão da resposta do servidor (Os dados mesmo)
-    */
+    request.onload = function () {
 
-    const response = await fetch("https://pokeapi.co/api/v2/type")
-    const data = await response.json()
+        const data = JSON.parse(request.response)
 
-    pokemonTypes = data.results.map(function (type) {
-        return type.name
-    });
+        pokemonTypes = data.results.map(function (type) {
+            return type.name
+        });
+    };
 
-    // #endregion
-
-    // #region Utilizando then
-    /*        
-        Código onde cada then depende diretamente do outro. Mais código, menos legível.
-        Em sala fizemos assim, com a diferença que aqui estamos adicionando os dados obtidos numa váriavel
-        Linha 33: Aguarda resposta do servidor e inicia a conversão em json
-        Linha 34: Aguarda dados já convertidos
-        Linha 39: Mostra algum erro
-    */
-
-    // pokemonTypes = await fetch("https://pokeapi.co/api/v2/type")
-    //     .then((response) => response.json())
-    //     .then(data => {
-    //         return data.results.map(function (type) {
-    //             return type.name
-    //         });
-    //     })
-    //     .catch(error => {
-    //         console.error(error);
-    //     });
-
-    // #endregion
+    request.send()
 }
 
-async function fetchPokemonsAsync() {
-    // Obter pokemons e inserir o resultado na variavel pokemonList
-    // Tome como exemplo a função fetchTypesAsync() na linha 5
-    // Dessa vez não vamos consumir da pokeapi, utilizem o arquivo json que eu montei
+function fetchPokemons() {
     // https://borgesdn.github.io/pokedex-source/pokedex.json
+    const request = new XMLHttpRequest()
+
+    request.open("GET", "https://borgesdn.github.io/pokedex-source/pokedex.json", false)
+
+    request.onload = function () {
+        pokemonList = JSON.parse(request.response) 
+    };
+
+    request.send()
 }
 
-async function getPokemon(id) {
-    // Obter pokemon pelo id
-    // Tome como exemplo a função fetchTypesAsync() na linha 5
-    // Consumir da pokeapi, utilizem o arquivo json que eu montei
-    // https://pokeapi.co/api/v2/pokemon/(id recebido no parametro)
-}
+function getPokemon(id) {
+    // https://pokeapi.co/api/v2/pokemon/{id}
+    const request = new XMLHttpRequest();
+
+    request.open("GET", `https://pokeapi.co/api/v2/pokemon/${id}`, false)
+    let pokemon;
+    request.onload = function () {
+        pokemon = JSON.parse(request.response) 
+    };
+
+    request.send()
+    return pokemon
+};
 
 function filterPokemon(name, type) {
     const filteredList = pokemonList.filter(pokemon => {

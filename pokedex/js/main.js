@@ -1,11 +1,8 @@
-// Bloco assíncrono para chamar métodos assíncronos do arquivo app, assim que a página carrega
-!async function () {
-  await fetchTypesAsync()
-  loadComboBoxTypes(pokemonTypes)
+fetchTypes()
+loadComboBoxTypes(pokemonTypes)
 
-  await fetchPokemonsAsync()
-  loadPokemonList(pokemonList)
-}();
+fetchPokemons()
+loadPokemonList(pokemonList)
 
 function loadComboBoxTypes(types) {
   types.map(t => $('#filter-type').append(`<option>${t}</option>`))
@@ -39,7 +36,7 @@ function createPokemonCard(pokemon) {
     <figure class="pokemon-figure">
         <img src="img/${img.toLowerCase()}.png" alt="${pokemon.name}">
       </figure>
-      <section class="pokemon-description">
+      <section class="pokemon-deion">
         <span class="pokemon-id">#${Number(pokemon.id).toString().padStart(3, '0')}</span>
         <h1 class="pokemon-name">${pokemon.name}</h1>
         <div class="pokemon-types">${types}</div>
@@ -95,19 +92,41 @@ function filter() {
   return filteredList;
 }
 
-async function viewPokemon(e) {
+function viewPokemon(e) {
   e.preventDefault();
 
-  const pokemon = await getPokemon($(this).data("id"))
+  const pokemon = getPokemon($(this).data("id"))
 
   $("#id").val(pokemon.id)
-  $("#name").val(pokemon.name)
-  // Débora, ajeite isso aqui
+  $(".pokemon-sprite-m").attr('src', pokemon.sprites.other["official-artwork"].front_default)
+  $(".pokemon-sprite-m").attr('alt', `${capitalize(pokemon.id.toString().padStart(3, '0'))} ${capitalize(pokemon.name)}`)
+  $(".pokemon-name-m").text(`#${capitalize(pokemon.id.toString().padStart(3, '0'))} ${capitalize(pokemon.name)}`)
 
-  for (const type of pokemon.types) {
-    $(`.type[value=${type.type.name}`).prop('checked', true)
-  }
+  const types = pokemon.types
+    .map(t => `<span class="mr-1 badge background-${t.type.name}">${capitalize(t.type.name)}</span>`)
+    .join('')
+  $(".pokemon-types-m-m").html(types)
 
-  $(".modal-title").html(`Editar ${pokemon.name}`)
+  const abilities = pokemon.abilities.filter((a) => { return !a.is_hidden })
+    .map(a => `${capitalize(a.ability.name)}; `)
+    .join('')
+  $(".pokemon-abilities-m").html(`<small>${abilities}</small>`)
+
+  const hiddenAbilities = pokemon.abilities.filter((a) => { return a.is_hidden })
+    .map(a => `${capitalize(a.ability.name)}; `)
+    .join('')
+  $(".pokemon-hidden-abilities-m").html(`<small>${hiddenAbilities}</small>`)
+
+  const stats = pokemon.stats
+    .map(s => `<div class="progress my-2">
+      <div class="progress-bar" role="progressbar" style="width: ${s.base_stat}%" aria-valuenow="${s.base_stat}" aria-valuemin="0" aria-valuemax="100">${capitalize(s.stat.name)}: ${s.base_stat}</div></div>`)
+    .join('')
+  $(".pokemon-stats-m").html(stats)
+
   $(".modal").modal('show')
+}
+
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
 }
