@@ -111,3 +111,4 @@ async function viewPokemon(e) {
   $(".modal-title").html(`Editar ${pokemon.name}`)
   $(".modal").modal('show')
 }
+
