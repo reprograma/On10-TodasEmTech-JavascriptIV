@@ -52,7 +52,7 @@ async function fetchPokemonsAsync() {
     //Primeira opção de resolução:
     pokemonList = await fetch("https://borgesdn.github.io/pokedex-source/pokedex.json")
         .then((resposta) => resposta.json())
-        .catch(error => { 
+        .catch(error => {
             console.error(error);
         });
     return pokemonList
