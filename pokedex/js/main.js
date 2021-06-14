@@ -3,7 +3,7 @@ $(document).ready(function () {
   //let pokemonTypes = [] // ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
 
 
-  //fetch("https://pokeapi.co/api/v2/type")
+  fetch("https://pokeapi.co/api/v2/type")
     .then(response => response.json())
     .then(json => console.log(json)
     const pokemonTypes = json.results.map(function (type) {
@@ -16,7 +16,7 @@ $(document).ready(function () {
     let pokemonList = [] // ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "dark"]
 
 
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=150")
+   //fetch("https://pokeapi.co/api/v2/pokemon/?limit=150")
       .then(response => response.json())
       .then(json => console.log(json)
       const pokemonList = pokemonList.find(pokemon.id == id);
